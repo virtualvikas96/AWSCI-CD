@@ -6,11 +6,11 @@ phases:
       - echo "Insatlling NGINX"
       - sudo apt-get update
       - sudo apt-get install nginx -y
-  buils:
+  build:
     commands:
       - echo Build started on 'date'
       - cp index.html /var/www/html/
-  post_buils:
+  post_build:
     commands:
       - echo "COnfiguring NGINX"
 
