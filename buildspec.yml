@@ -2,12 +2,9 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      java: corretto11  # Optional: remove if not needed
     commands:
       - echo "Installing NGINX"
       - sudo yum update -y
-      - sudo amazon-linux-extras enable nginx1
       - sudo yum install nginx -y
       - sudo systemctl start nginx
       - sudo systemctl enable nginx
