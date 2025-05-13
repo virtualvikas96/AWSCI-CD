@@ -2,17 +2,24 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      java: corretto11  # Optional: remove if not needed
     commands:
-      - echo "Insatlling NGINX"
-      - sudo apt-get update
-      - sudo apt install nginx -y
+      - echo "Installing NGINX"
+      - sudo yum update -y
+      - sudo amazon-linux-extras enable nginx1
+      - sudo yum install nginx -y
+      - sudo systemctl start nginx
+      - sudo systemctl enable nginx
+
   build:
     commands:
-      - echo Build started on 'date'
-      - cp index.html /var/www/html/
+      - echo "Build started on $(date)"
+      - sudo cp index.html /usr/share/nginx/html/
+
   post_build:
     commands:
-      - echo "Configuring NGINX"
+      - echo "Configuring NGINX - Done"
 
 artifacts:
   files:
