@@ -7,11 +7,17 @@ This project demonstrates end-to-end deployment of a static HTML page using **AW
 ## 📂 Project Structure
 
 ├── scripts/
+
 │ ├── install_nginx.sh # Installs and enables NGINX
+
 │ └── start_nginx.sh # Starts NGINX and enables it at boot
+
 ├── index.html # Static HTML portfolio page
+
 ├── appspec.yml # CodeDeploy deployment configuration
+
 ├── buildspec.yml # CodeBuild build instructions
+
 └── README.md # Project documentation (this file)
 
 
